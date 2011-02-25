@@ -12,4 +12,13 @@ describe Timesheet do
     #t2.save.should be_true
     expect { t2.save}.to raise_error(ActiveRecord::StaleObjectError)
   end
+
+  it "should pass transactional update" do
+    Timesheet.transaction do
+      t1 = Timesheet.create
+      t2 = Timesheet.create
+      t1.rate=220
+      t2.rate=232
+    end
+  end
 end
