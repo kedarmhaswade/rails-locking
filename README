@@ -1,0 +1,5 @@
+== Welcome to Rails
+Shows how to use database locking (OCC) in Rails app.
+* bundle install
+* rspec spec/
+
